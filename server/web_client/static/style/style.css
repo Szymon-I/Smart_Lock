@@ -1,0 +1,113 @@
+.background_pattern {
+    background-image: url("../media/blackorchid.jpg");
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+}
+
+span#logo {
+    font-weight: bold;
+    text-align: center;
+    font-size: 200%;
+}
+
+.full_page {
+    /* min-height: 100vh; */
+    height: 100% !important;
+}
+
+.full_page_mod {
+    /* min-height: 100vh; */
+    min-height: 100% !important;
+}
+
+.vertical_center {
+    top: 50%;
+}
+
+.spacing {
+    height: 30%;
+}
+
+.container_info {
+    height: 20%;
+    font-size: 70%;
+}
+
+.page-footer {
+    height: 20%;
+}
+
+.footer-copyright {
+    height: 20%;
+    font-size: 80%;
+}
+
+.logo_container {
+    height: 40%;
+}
+
+.login_container {
+    height: 40%;
+}
+
+#logo_icon {
+    font-size: 150%;
+}
+
+.center_vertical {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+body, html, .container-fluid {
+    height: 100%;
+}
+
+form {
+    height: 100%;
+    /* width: 100%; */
+
+}
+
+.invisible {
+    display: none;
+}
+
+.lock_icon_second_animation {
+    animation-duration: 1s;
+    animation-delay: 4s;
+    animation-iteration-count: infinite;
+}
+
+.form_text {
+    max-width: 80%;
+}
+
+.toast {
+    font-family: 'Roboto Mono', monospace;
+    color: black;
+    transition: opacity 0.5s linear !important;
+}
+
+#myToast {
+    transition: opacity 0.5s linear !important;
+}
+
+.card {
+    color: black;
+}
+
+.logout_button {
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    text-align: center;
+
+}
+
+/*.fade {*/
+/*  transition-duration: 2s;*/
+/*}*/

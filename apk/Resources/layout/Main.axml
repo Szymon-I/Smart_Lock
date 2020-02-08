@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blackorchid"
+    android:gravity="top">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextIp"
+        android:text="192.168.1.101"
+        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/white"
+    />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextLogin"
+        android:hint="Email address"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="189.5dp"
+        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/white"
+    />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextPassword"
+        android:hint="Password"
+        android:password="true"
+        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/white"
+    />
+    <Button
+        android:text="Zaloguj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonZaloguj"
+        android:background="#50ffffff"
+        android:textColor="#ffffffff"/>
+</LinearLayout>

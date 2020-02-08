@@ -1,0 +1,91 @@
+{% extends "includes/header.html" %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+
+
+    <div class="container">
+        <div class="row" style="padding-top: 5%">
+            {% for lock in locks %}
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card text-white bg-dark mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ lock.name }}</h5>
+                            <p class="card-text">Type: {{ lock.type }}</p>
+                            <p class="card-text">Location: {{ lock.location }}</p>
+                            <p class="card-text">Hardware: {{ lock.hardware }}</p>
+                            <p class="card-text open_status" data-lock-id={{ lock.id }}>Open:
+                                {% if lock.open_status %}
+                                    <span class='oi oi-check' style="color:green"></span>
+                                {% else %}
+                                    <span class='oi oi-x' style="color:red"></span>
+                                {% endif %}
+                            </p>
+                            <a class="btn btn-success lock_action" data-action="open"
+                               data-lock-id={{ lock.id }}>Open</a>
+                            <a class="btn btn-danger lock_action" data-action="close"
+                               data-lock-id={{ lock.id }}>Close</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="logout_button">
+            <form method="post" action="/account/logout/">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-secondary">Sign Out</button>
+            </form>
+        </div>
+    </div>
+    {% csrf_token %}
+    <script>
+
+
+        const csrftoken = $('input[name=csrfmiddlewaretoken]').val();
+
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        $(".lock_action").click(function () {
+            let lock_id = $(this).data('lock-id');
+            let action = $(this).data('action');
+            $.ajax({
+                url: '{% url "lock_action_web" %}',
+                data: {
+                    'lock_id': lock_id,
+                    'action': action,
+                },
+                dataType: 'json',
+                type: 'POST',
+                beforeSend: function (jqXHR) {
+                    jqXHR.setRequestHeader('X-CSRFToken', csrftoken);
+                },
+                success: function (data) {
+                    if (data.error !== "False") {
+                        alert(data.error);
+                    } else {
+                        let temp_catch = `.open_status[data-lock-id=${lock_id}]`;
+                        if (action === "open") {
+                            $(temp_catch).html("Open: <span class='oi oi-check' style=\"color:green\"></span>")
+                        } else if (action === "close") {
+                            $(temp_catch).html("Open: <span class='oi oi-x' style=\"color:red\"></span>")
+                        }
+                    }
+                }
+            });
+        })
+    </script>
+
+
+{% endblock %}

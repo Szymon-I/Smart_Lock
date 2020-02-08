@@ -1,0 +1,42 @@
+{% extends "includes/header.html" %}
+{% block content %}
+    {% load widget_tweaks %}
+    <div class="container full_page">
+        <div class="container spacing"></div>
+
+        <div class="container-flux login_container">
+
+            <div class="row h-100 align-items-center">
+                <div class="col-8 offset-2 col-md-6 offset-md-4 offset-lg-4 col-lg-5 align-middle">
+
+                    <form action="" method="POST" id="register_form">
+                        {% csrf_token %}
+
+                        <div class="form-group form_text">
+                            <label for="exampleInputEmail1">Email address</label>
+                            {% render_field form.email class+="form-control" placeholder="Enter email" %}
+                        </div>
+
+                        <div class="form-group form_text">
+                            <label for="password1">Password</label>
+                            {% render_field form.password1 class+="form-control" placeholder="Enter password" %}
+                        </div>
+
+{#                        <div class="form-group form_text">#}
+{#                            <label for="password2">Re-type password</label>#}
+{#                            {% render_field form.password2 class+="form-control" placeholder="Re-enter password" %}#}
+{#                            <small id="Help" class="form-text text-muted">Never share your account details...</small>#}
+{#                        </div>#}
+
+
+                        <button type='submit' form="register_form" formaction=""
+                                class='btn btn-outline-light animated fadeIn' style='margin-right:10px;'>Register
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container spacing"></div>
+    </div>
+
+{% endblock %}

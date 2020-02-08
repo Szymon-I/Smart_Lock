@@ -1,0 +1,34 @@
+{% extends "includes/header.html" %}
+{% block content %}
+    {% load widget_tweaks %}
+    <div class="container full_page">
+        <div class="container spacing"></div>
+
+        <div class="container-flux login_container">
+
+            <div class="row h-100 align-items-center">
+                <div class="col-8 offset-2 col-md-6 offset-md-4 offset-lg-4 col-lg-5 align-middle">
+
+                    <form action="" method="POST" id="login_form">
+                        {% csrf_token %}
+
+                        <div class="form-group form_text">
+                            <label for="email">Email address</label>
+                            {% render_field form.email class+="form-control" placeholder="Enter email" %}
+                        </div>
+
+                        <button type="submit" form="login_form" formaction=""
+                                class='btn btn-outline-light animated fadeIn'
+                                style='margin-right:10px; margin-bottom:10px;'>Retrieve password
+                        </button>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container spacing"></div>
+    </div>
+{% endblock %}

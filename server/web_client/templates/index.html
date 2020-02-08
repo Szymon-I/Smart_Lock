@@ -1,0 +1,85 @@
+{% extends "includes/header.html" %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+
+
+    <div class="container full_page">
+        <div class="container spacing"></div>
+
+        <div class="container-flux logo_container">
+            <div class="row h-50 align-items-end">
+                <div class="col-10 offset-2 col-md-8 offset-md-4 offset-lg-4 col-lg-4">
+                    <span id="logo"></span>
+                </div>
+            </div>
+
+
+            <div class="row h-50 align-items-start">
+                <div class="col-10 offset-2 col-md-8 offset-md-4 offset-lg-4 col-lg-4 button_column">
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="container spacing"></div>
+    </div>
+
+
+    <div class='container full_page invisible' id='learn_more_page'>
+
+        <div class="container-flux container_info invisible">
+            <div class="row h-100 align-items-center animated slideInLeft">
+                <div class="col-6">
+                    <span>Creating an account allows you to manage user locks
+                    from anywhere. In case you forget your password,you can easily recover it</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-flux container_info invisible">
+            <div class="row h-100 align-items-center animated slideInLeft">
+                <div class="col-6 offset-6">
+                    <span>Smart Lock platform provide solution for changing permissions
+                    and view system logs for every device in global network.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-flux container_info invisible">
+            <div class="row h-100 align-items-center animated slideInLeft">
+                <div class="col-6">
+                    <span>System connects globally with all devices in local networks,
+                        which allows access to them from any place</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-flux container_info invisible">
+            <div class="row h-100 align-items-center animated slideInLeft">
+                <div class="col-6 offset-6">
+                    <span>Tutorial is available in the help tab,
+                        which is accessible after logging into user account.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer  font-small blue invisible animated fadeIn">
+            <div class="row h-100 align-items-end justify-content-md-center">
+                <div class="col-12">
+                    <!-- Copyright -->
+                    <div class="footer-copyright text-center pb-2">
+                        <span>© 2019 Copyright:</span>
+                        <span style="font-weight: 100;">Szymon Idziniak and Paweł Skrzypkowski</span>
+                    </div>
+                    <!-- Copyright -->
+                </div>
+            </div>
+        </footer>
+        <!-- Footer -->
+    </div>
+    <script src="{% static 'scripts/start_script.js' %}"></script>
+{% endblock %}
